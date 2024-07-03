@@ -1,4 +1,4 @@
-// Loader.js
+
 import React from 'react';
 import Lottie from 'lottie-react';
 import animationData from '../../assets/Animation - 1719913695894.json';
