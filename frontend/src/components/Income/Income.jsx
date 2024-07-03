@@ -5,7 +5,7 @@ import { FaTrash } from 'react-icons/fa';
 import './Income.css';
 import api from '../../utils/api';
 import Navbar from '../navbar/Navbar';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion'; 
 
 const Income = ({ token }) => {
   const [incomes, setIncomes] = useState([]);
@@ -15,7 +15,7 @@ const Income = ({ token }) => {
     if (token) {
       fetchIncomes();
     } else {
-      // Reset incomes and totalIncome if token is null (user logged out)
+    
       setIncomes([]);
       setTotalIncome(0);
     }
@@ -50,7 +50,7 @@ const Income = ({ token }) => {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {
-      console.log('Income added:', response.data); // Log the added income data
+      console.log('Income added:', response.data); 
       setIncomes([response.data.income, ...incomes]);
       setTotalIncome(totalIncome + parseFloat(e.target.amount.value));
       toast.success('Income added successfully!');
@@ -85,7 +85,7 @@ const Income = ({ token }) => {
       <ToastContainer />
       <Navbar />
       <motion.div className="incomeContainer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        {/* Form for adding income */}
+     
         <motion.div className="addIncome" initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 0.5 }}>
           <form onSubmit={handleSubmit}>
             <input type="text" name="title" placeholder='Income Title' required />
@@ -103,7 +103,7 @@ const Income = ({ token }) => {
           </form>
         </motion.div>
 
-        {/* Display section for incomes */}
+    
         <motion.div className="incomeStats" initial={{ x: 100 }} animate={{ x: 0 }} transition={{ duration: 0.5 }}>
           <div className="incomeDisplay">
             <h2>Total Income: ₹ {totalIncome}</h2>
