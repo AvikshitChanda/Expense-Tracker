@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* Ensure body does not scroll */
+}
+
+.incomeContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 10px;
+  height: 100vh; /* Ensure the container spans the full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.addIncome {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+  margin-bottom: 120px; /* Add margin to create space */
+}
+
+.addIncome form {
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.fixedTextArea {
+  height: 100px; /* Set fixed height */
+  resize: none; /* Disable resizing */
+  padding: 10px; /* Optional: Add padding for better appearance */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.addIncome input,
+.addIncome select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.addIncome button {
+  padding: 10px;
+  border: none;
+  background-color: #36B82A;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.incomeStats {
+  flex: 1;
+  margin-left: 20px; /* Adjust margin or padding as necessary */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 120px;
+}
+
+.incomeStats .incomeDisplay {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.incomeStats .currentHistory {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: calc(100vh - 300px); /* Adjust as needed based on other fixed heights */
+  overflow-y: auto; /* Enable scrolling if content exceeds max-height */
+}
+
+.incomeStats .currentHistory .incomeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.incomeStats .currentHistory .incomeItem:last-child {
+  border-bottom: none;
+}
+
+.incomeStats .currentHistory .incomeItem .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.incomeStats .currentHistory .incomeItem .actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.deleteButton:hover {
+  color: darkred;
+}
+
+.actions .amountIncome {
+  color: #36B82A;
+}
+
+.incomeDisplay h2{
+  color: #36B82A;
+}

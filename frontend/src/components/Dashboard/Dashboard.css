@@ -1,0 +1,158 @@
+/* Dashboard.css */
+
+/* Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Main Dashboard Container */
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px); /* Adjust as per your layout */
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #eef2f7;
+  }
+  
+  /* Dashboard Content */
+  .dashboard {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  /* Left Section (Chart) */
+  .left {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .transactionChart {
+    width: 90%;
+    height: 80vh; /* Adjust height as needed */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .catchy-heading {
+    font-size: 2em;
+    font-weight: bold;
+    color: #1a73e8;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Right Section (Transactions and Stats) */
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border-left: 2px solid #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .recent, .stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .recent h2, .stats h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .recent ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .recent li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .income .transaction-amount {
+    color: #4caf50; /* Green color for income */
+  }
+  
+  .expense .transaction-amount {
+    color: #f44336; /* Red color for expense */
+  }
+  
+  /* FontAwesome Icons */
+  .icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1a73e8;
+  }
+  
+  .transaction-title {
+    font-weight: bold;
+  }
+  
+  .transaction-amount {
+    font-weight: bold;
+  }
+  
+
+  
+  .stats h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .stats div {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .total-income {
+    color: #4caf50; /* Green color for income */
+  }
+  
+  .total-expense {
+    color: #f44336; /* Red color for expense */
+  }
+  .stats .balance {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #1a73e8; /* You can choose a color for the balance section */
+  }

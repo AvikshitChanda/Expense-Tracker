@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* Ensure body does not scroll */
+}
+
+.expenseContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 10px;
+  height: 100vh; /* Ensure the container spans the full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.addExpense {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+  margin-bottom: 120px; /* Add margin to create space */
+}
+
+.addExpense form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.fixedTextArea {
+  height: 100px; /* Set fixed height */
+  resize: none; /* Disable resizing */
+  padding: 10px; /* Optional: Add padding for better appearance */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.addExpense input,
+.addExpense select {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.addExpense button {
+  padding: 10px;
+  border: none;
+  background-color:#E72929;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.expenseStats {
+  flex: 1;
+  margin-left: 20px; /* Adjust margin or padding as necessary */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 120px;
+}
+
+.expenseStats .expenseDisplay {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.expenseStats .currentHistory {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  max-height: calc(100vh - 300px); /* Adjust as needed based on other fixed heights */
+  overflow-y: auto; /* Enable scrolling if content exceeds max-height */
+}
+
+.expenseStats .currentHistory .expenseItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.expenseStats .currentHistory .expenseItem:last-child {
+  border-bottom: none;
+}
+
+.expenseStats .currentHistory .expenseItem .details {
+  display: flex;
+  flex-direction: column;
+}
+
+.expenseStats .currentHistory .expenseItem .actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.deleteButton:hover {
+  color: darkred;
+}
+
+.actions .amountExpense {
+  color: #E72929;
+}
+
+.expenseDisplay h2 {
+  color: #E72929;
+}

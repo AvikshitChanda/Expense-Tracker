@@ -1,0 +1,162 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    height: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-logo img {
+    height: 68px;
+    width: 230px;
+  }
+  
+  .navbar-center {
+    display: flex;
+    gap: 100px;
+  }
+  
+  .navbar-center a {
+    display: flex;
+    align-items: center;
+    color: #555;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .navbar-center a .navbar-icon {
+    margin-right: 8px;
+    font-size: 20px;
+  }
+  
+  .navbar-center a:hover {
+    text-decoration: underline;
+    color: #36b82a; /* Color for underline on hover */
+  }
+  
+  .navbar-center a.active {
+    text-decoration: underline;
+    color: #36b82a; /* Color for underline of active link */
+  }
+  
+  .navbar-profile {
+    position: relative;
+  }
+  
+  .profile-icon {
+    font-size: 31px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 200px; /* Adjust the width as needed */
+    display: none; /* Hide dropdown by default */
+    z-index: 1000; /* Ensure dropdown is on top */
+  }
+  
+  .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Position the arrow above the dropdown */
+    right: 7px; /* Adjust the position to align with the profile icon */
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add shadow to the arrow for better visibility */
+  }
+  
+  .dropdown::after {
+    content: "";
+    position: absolute;
+    top: -11px; /* Position the border above the arrow */
+    right: 6.5px; /* Adjust the position to align with the profile icon */
+    border-width: 0 11px 11px 11px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent; /* Add black border to the arrow */
+    z-index: -1; /* Ensure the border is behind the arrow */
+  }
+  
+  .dropdown.open {
+    display: block; /* Show dropdown when open */
+  }
+  
+  .dropdown-userinfo {
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  
+  .dropdown-icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .dropdown-username {
+    font-size: 18px;
+    font-weight: bold;
+    
+  }
+  
+  .dropdown-divider {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  .dropdown-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    color: #36b82a; /* Hover color */
+  }
+  
+  .dropdown-menu button {
+    display: flex;
+    align-items: center;
+    background-color: #36b82a;
+    color: white;
+    border: none;
+    padding: 10px 60px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  .dropdown-menu button:hover {
+    background-color: #2e9d24; /* Hover background color */
+  }
+  
