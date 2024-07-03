@@ -4,15 +4,15 @@ import api from '../../utils/api';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from 'react-router-dom';
-import LoaderAnimation from '../Loader/Loader'; // Adjust the path as needed
+import LoaderAnimation from '../Loader/Loader'; 
 import Logo from '../../assets/Logo.png';
 
 const Login = ({ setToken }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); // Initially false to avoid showing loader immediately
-  const navigate = useNavigate(); // Use the useNavigate hook from react-router-dom
+  const [loading, setLoading] = useState(false); 
+  const navigate = useNavigate(); 
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ const Login = ({ setToken }) => {
       return;
     }
 
-    setLoading(true); // Show loader animation
+    setLoading(true); 
     try {
       const response = await api.post('/auth/login', { username, password });
 
@@ -31,33 +31,33 @@ const Login = ({ setToken }) => {
       }
 
       const { token } = response.data;
-      // Handle successful login here, e.g., save the token and username in local storage
+    
       setToken(token, username);
       toast.success('Login successful!');
 
-      // Redirect to the dashboard page after 2 seconds
+  
       setTimeout(() => {
         navigate('/dashboard');
-        setLoading(false); // Hide loader animation
+        setLoading(false); 
       }, 2000);
       
     } catch (err) {
       setError(err.response?.data?.message || err.message || 'Login failed. Please try again.');
-      setLoading(false); // Hide loader animation on error
+      setLoading(false); 
     }
   };
 
   return (
     <div>
-      {/* Navbar */}
+ 
       <div className="navbar">
         <img src={Logo} alt="Logo" className="logo" />
       </div>
 
-      {/* Login Form */}
+  
       <div className="login-form">
         <h2>Login</h2>
-        {loading && <LoaderAnimation />} {/* Show loader animation while loading */}
+        {loading && <LoaderAnimation />} 
         {error && <p className="error-message">{error}</p>}
         {!loading && (
           <form onSubmit={handleLogin}>
