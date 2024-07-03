@@ -1,6 +1,4 @@
-/* Register.css */
 
-/* Navbar styles */
 .navbar {
   background-color: #ffffff;
   border-bottom: 1px solid #ccc;
@@ -20,11 +18,11 @@
   width: 210px;
 }
 
-/* Register form styles */
+
 .register-form {
   width: 100%;
   max-width: 350px;
-  margin: auto; /* Center horizontally */
+  margin: auto;
   position: relative;
   top: 22%;
   margin-top: 80px;
