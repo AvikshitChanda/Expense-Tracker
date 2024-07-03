@@ -15,9 +15,9 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faClock, faWallet } from '@fortawesome/free-solid-svg-icons';
 import api from '../../utils/api';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion'; 
 
-// Register necessary components with Chart.js
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -67,8 +67,8 @@ const Dashboard = ({ token }) => {
     if (token) {
       fetchChartData();
       fetchRecentTransactions();
-      fetchTotalExpense(); // Fetch total expense when component mounts
-      fetchTotalIncome(); // Fetch total income when component mounts
+      fetchTotalExpense();
+      fetchTotalIncome(); 
     }
 
     return () => {
@@ -195,7 +195,7 @@ const Dashboard = ({ token }) => {
 
   const formattedBalance = () => {
     const balance = calculateBalance();
-    return Math.max(0, balance).toFixed(2); // Ensure balance is not negative
+    return Math.max(0, balance).toFixed(2); 
   };
 
   return (
