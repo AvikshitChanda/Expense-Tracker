@@ -5,7 +5,7 @@ import { FaTrash } from 'react-icons/fa';
 import './Expense.css';
 import api from '../../utils/api';
 import Navbar from '../navbar/Navbar';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import { motion } from 'framer-motion';
 
 const Expense = ({ token }) => {
   const [expenses, setExpenses] = useState([]);
@@ -15,7 +15,7 @@ const Expense = ({ token }) => {
     if (token) {
       fetchExpenses();
     } else {
-      // Reset expenses and totalExpense if token is null (user logged out)
+  
       setExpenses([]);
       setTotalExpense(0);
     }
@@ -26,7 +26,7 @@ const Expense = ({ token }) => {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {
-      console.log('Fetched expenses:', response.data); // Check the response data
+      console.log('Fetched expenses:', response.data); 
       setExpenses(response.data);
       const total = response.data.reduce((sum, expense) => sum + expense.amount, 0);
       setTotalExpense(total);
@@ -51,7 +51,7 @@ const Expense = ({ token }) => {
       headers: { Authorization: `Bearer ${token}` }
     })
     .then(response => {
-      console.log('Expense added:', response.data); // Log the added expense data
+      console.log('Expense added:', response.data); 
       setExpenses([response.data.expense, ...expenses]);
       setTotalExpense(totalExpense + parseFloat(e.target.amount.value));
       toast.success('Expense added successfully!');
@@ -86,7 +86,7 @@ const Expense = ({ token }) => {
       <ToastContainer />
       <Navbar />
       <motion.div className="expenseContainer" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        {/* Form for adding expense */}
+     
         <motion.div className="addExpense" initial={{ x: -100 }} animate={{ x: 0 }} transition={{ duration: 0.5 }}>
           <form onSubmit={handleSubmit}>
             <input type="text" name="title" placeholder='Expense Title' required />
@@ -104,7 +104,7 @@ const Expense = ({ token }) => {
           </form>
         </motion.div>
 
-        {/* Display section for expenses */}
+     
         <motion.div className="expenseStats" initial={{ x: 100 }} animate={{ x: 0 }} transition={{ duration: 0.5 }}>
           <div className="expenseDisplay">
             <h2>Total Expense: ₹ {totalExpense}</h2>
