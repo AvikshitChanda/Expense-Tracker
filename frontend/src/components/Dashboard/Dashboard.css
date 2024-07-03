@@ -1,6 +1,4 @@
-/* Dashboard.css */
 
-/* Reset */
 * {
     padding: 0;
     margin: 0;
@@ -14,17 +12,17 @@
     font-family: 'Roboto', sans-serif;
   }
   
-  /* Main Dashboard Container */
+
   .dashboard-container {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 100px); /* Adjust as per your layout */
+    height: calc(100vh - 100px);
     overflow-y: auto;
     overflow-x: hidden;
     background-color: #eef2f7;
   }
   
-  /* Dashboard Content */
+
   .dashboard {
     display: flex;
     flex: 1;
@@ -32,7 +30,7 @@
     padding: 20px;
   }
   
-  /* Left Section (Chart) */
+
   .left {
     flex: 2;
     height: 100%;
@@ -43,7 +41,7 @@
   
   .transactionChart {
     width: 90%;
-    height: 80vh; /* Adjust height as needed */
+    height: 80vh;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -58,7 +56,7 @@
     text-align: center;
   }
   
-  /* Right Section (Transactions and Stats) */
+ 
   .right {
     flex: 1;
     display: flex;
@@ -112,10 +110,10 @@
   }
   
   .expense .transaction-amount {
-    color: #f44336; /* Red color for expense */
+    color: #f44336; 
   }
   
-  /* FontAwesome Icons */
+ 
   .icon {
     font-size: 24px;
     margin-bottom: 10px;
@@ -144,15 +142,15 @@
   }
   
   .total-income {
-    color: #4caf50; /* Green color for income */
+    color: #4caf50; 
   }
   
   .total-expense {
-    color: #f44336; /* Red color for expense */
+    color: #f44336;
   }
   .stats .balance {
     margin-top: 20px;
     font-size: 1.5em;
     font-weight: bold;
-    color: #1a73e8; /* You can choose a color for the balance section */
+    color: #1a73e8;
   }
