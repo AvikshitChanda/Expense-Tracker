@@ -1,11 +1,11 @@
 const Income = require("../models/income");
-const mongoose = require('mongoose'); // Ensure mongoose is imported
-// Controller to add a new income
+const mongoose = require('mongoose');
+
 const addIncome = async (req, res) => {
   const { title, amount, date, description, category } = req.body;
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id; 
   console.log(userId)
-  // Validation checks
+ 
   if (!title || !category || !description || !date) {
     return res.status(400).json({ message: 'Fill the necessary details!' });
   }
@@ -20,7 +20,7 @@ const addIncome = async (req, res) => {
     date,
     description,
     category,
-    userId // Associate income with the authenticated user
+    userId 
   });
 
   try {
@@ -32,9 +32,9 @@ const addIncome = async (req, res) => {
   }
 };
 
-// Controller to get incomes of the authenticated user
+
 const getIncomes = async (req, res) => {
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id; 
  
 
   try {
@@ -46,10 +46,10 @@ const getIncomes = async (req, res) => {
   }
 };
 
-// Controller to delete income of the authenticated user by income ID
+
 const deleteIncome = async (req, res) => {
   const { id } = req.params;
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id;
 
   try {
     const deletedIncome = await Income.findOneAndDelete({ _id: id, userId });
@@ -63,16 +63,16 @@ const deleteIncome = async (req, res) => {
   }
 };
 const getTotalIncome = async (req, res) => {
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id;
 
   try {
-    // Calculate total income
+
     const totalIncomeResult = await Income.aggregate([
       { $match: { userId: new mongoose.Types.ObjectId(userId) } },
       { $group: { _id: null, totalIncome: { $sum: "$amount" } } }
     ]);
 
-    // Extract total income from result
+ 
     const totalIncome = totalIncomeResult.length > 0 ? totalIncomeResult[0].totalIncome : 0;
 
     res.status(200).json({ totalIncome });
