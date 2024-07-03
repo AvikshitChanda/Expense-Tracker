@@ -106,7 +106,7 @@
   }
   
   .income .transaction-amount {
-    color: #4caf50; /* Green color for income */
+    color: #4caf50; 
   }
   
   .expense .transaction-amount {
