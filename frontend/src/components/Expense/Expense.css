@@ -5,7 +5,7 @@
 }
 
 body {
-  overflow: hidden; /* Ensure body does not scroll */
+  overflow: hidden; 
 }
 
 .expenseContainer {
@@ -13,8 +13,8 @@ body {
   justify-content: space-between;
   padding: 20px;
   margin-top: 10px;
-  height: 100vh; /* Ensure the container spans the full viewport height */
-  overflow: hidden; /* Prevent scrolling */
+  height: 100vh;
+  overflow: hidden;
 }
 
 .addExpense {
@@ -23,8 +23,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
-  margin-bottom: 120px; /* Add margin to create space */
+  overflow-y: auto; 
+  margin-bottom: 120px; 
 }
 
 .addExpense form {
@@ -34,9 +34,9 @@ body {
 }
 
 .fixedTextArea {
-  height: 100px; /* Set fixed height */
-  resize: none; /* Disable resizing */
-  padding: 10px; /* Optional: Add padding for better appearance */
+  height: 100px;
+  resize: none; 
+  padding: 10px; 
   border: 1px solid #ddd;
   border-radius: 5px;
 }
@@ -60,7 +60,7 @@ body {
 
 .expenseStats {
   flex: 1;
-  margin-left: 20px; /* Adjust margin or padding as necessary */
+  margin-left: 20px; 
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -79,8 +79,8 @@ body {
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 10px;
-  max-height: calc(100vh - 300px); /* Adjust as needed based on other fixed heights */
-  overflow-y: auto; /* Enable scrolling if content exceeds max-height */
+  max-height: calc(100vh - 300px); 
+  overflow-y: auto; 
 }
 
 .expenseStats .currentHistory .expenseItem {
