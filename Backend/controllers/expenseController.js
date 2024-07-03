@@ -1,12 +1,12 @@
 const Expense = require("../models/expense");
-const mongoose = require('mongoose'); // Ensure mongoose is imported
+const mongoose = require('mongoose'); 
 
-// Controller to add a new expense
+
 const addExpense = async (req, res) => {
   const { title, amount, date, description, category } = req.body;
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id; 
 
-  // Validation checks
+
   if (!title || !category || !description || !date) {
     return res.status(400).json({ message: 'Fill the necessary details!' });
   }
@@ -21,7 +21,7 @@ const addExpense = async (req, res) => {
     date,
     description,
     category,
-    userId // Associate expense with the authenticated user
+    userId
   });
 
   try {
@@ -33,9 +33,9 @@ const addExpense = async (req, res) => {
   }
 };
 
-// Controller to get expenses of the authenticated user
+
 const getExpenses = async (req, res) => {
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id; 
 
   try {
     const expenses = await Expense.find({ userId }).sort({ date: 'desc' });
@@ -46,10 +46,10 @@ const getExpenses = async (req, res) => {
   }
 };
 
-// Controller to delete expense of the authenticated user by expense ID
+
 const deleteExpense = async (req, res) => {
   const { id } = req.params;
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id; 
 
   try {
     const deletedExpense = await Expense.findOneAndDelete({ _id: id, userId });
@@ -63,18 +63,18 @@ const deleteExpense = async (req, res) => {
   }
 };
 const getTotalExpense = async (req, res) => {
-  const userId = req.user.id; // Extracted from authenticated token
+  const userId = req.user.id; 
   console.log('userId:', userId);
 
   try {
-    // Calculate total expense
+   
     const totalExpenseResult = await Expense.aggregate([
       { $match: { userId: new mongoose.Types.ObjectId(userId) } },
       { $group: { _id: null, totalExpense: { $sum: "$amount" } } }
     ]);
     console.log('totalExpenseResult:', totalExpenseResult);
 
-    // Extract total expense from result
+    
     const totalExpense = totalExpenseResult.length > 0 ? totalExpenseResult[0].totalExpense : 0;
     console.log('totalExpense:', totalExpense);
 
