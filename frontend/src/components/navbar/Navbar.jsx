@@ -3,22 +3,21 @@ import { FaUserCircle, FaTachometerAlt, FaMoneyCheckAlt, FaMoneyBillAlt } from '
 import './Navbar.css';
 import Logo from '../../assets/Logo.png';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion'; // Import motion from Framer Motion
-import LoaderAnimation from '../Loader/Loader'; // Replace with your loader component
-
+import { motion } from 'framer-motion';
+import LoaderAnimation from '../Loader/Loader'; 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [username, setUsername] = useState('');
-  const [loading, setLoading] = useState(false); // State to manage loading animation
+  const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
-  const location = useLocation(); // React Router hook to get current location
+  const location = useLocation(); 
 
-  // Initialize activeLink based on current location
+ 
   const [activeLink, setActiveLink] = useState(location.pathname);
 
   useEffect(() => {
-    // Retrieve the username from local storage or wherever it is stored
+   
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) {
       setUsername(storedUsername);
@@ -31,17 +30,16 @@ const Navbar = () => {
 
   const handleLogout = () => {
     console.log('Logging out...');
-    setLoading(true); // Show loading animation
-
-    // Simulate logout delay
+    setLoading(true); 
+   
     setTimeout(() => {
-      // Remove the token and username from local storage
+    
       localStorage.removeItem('token');
       localStorage.removeItem('username');
-      // Redirect to the login page
+    
       navigate('/login');
-      setLoading(false); // Hide loading animation after logout
-    }, 3000); // Simulate loading for 3 seconds
+      setLoading(false); 
+    }, 3000); 
   };
 
   const handleClickOutside = (event) => {
@@ -61,12 +59,12 @@ const Navbar = () => {
     };
   }, [dropdownOpen]);
 
-  // Update activeLink whenever location changes
+
   useEffect(() => {
     setActiveLink(location.pathname);
   }, [location.pathname]);
 
-  // Framer Motion variants for navbar links
+
   const navItemVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
@@ -137,7 +135,7 @@ const Navbar = () => {
           </ul>
         </motion.div>
       </div>
-      {loading && <LoaderAnimation />} {/* Show loader animation while logging out or navigating */}
+      {loading && <LoaderAnimation />} 
     </nav>
   );
 };
