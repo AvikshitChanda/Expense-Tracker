@@ -5,23 +5,22 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import api from '../../utils/api';
 import { Link, useNavigate } from 'react-router-dom';
-import LoaderAnimation from '../Loader/Loader'; // Adjust the path as needed
-import logo from '../../assets/Logo.png'; // Adjust the path to your logo image
-
+import LoaderAnimation from '../Loader/Loader'; 
+import logo from '../../assets/Logo.png'; 
 const Register = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(true); // State to manage loading animation, initially true
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Simulate loading delay with setTimeout for demo purposes
+   
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
 
-    return () => clearTimeout(timer); // Cleanup timeout on unmount
+    return () => clearTimeout(timer); 
   }, []);
 
   const handleRegister = async (e) => {
@@ -34,38 +33,38 @@ const Register = () => {
       return toast.error('Passwords do not match');
     }
 
-    setLoading(true); // Show loader animation
+    setLoading(true);
 
     try {
       const response = await api.post('/auth/register', { username, password });
 
-      toast.success(response.data.message); // Display success message from the backend
+      toast.success(response.data.message); 
 
-      // Simulate redirect to login after 3 seconds
+      
       setTimeout(() => {
         navigate('/login');
-        setLoading(false); // Hide loader animation
+        setLoading(false); 
       }, 2000);
     } catch (error) {
       console.error('Error registering:', error);
       toast.error(error.response?.data?.message || 'Registration failed. Please try again.');
-      setLoading(false); // Hide loader animation on error
+      setLoading(false);
     }
   };
 
   return (
     <div>
-      {/* Navbar */}
+   
       <nav className="navbar">
         <div className="navbar-logo">
           <img src={logo} alt="Logo" />
         </div>
       </nav>
 
-      {/* Register Form */}
+    
       <div className="register-form">
         <h2>Register</h2>
-        {loading && <LoaderAnimation />} {/* Show loader animation while loading */}
+        {loading && <LoaderAnimation />} 
         <form onSubmit={handleRegister}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
